@@ -1,6 +1,5 @@
 package com.search_service_es.controller;
 
-import com.search_service_es.config.SearchRequest;
 import com.search_service_es.dto.Employee;
 import com.search_service_es.intf.service_intf;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +25,9 @@ public class Controller {
         return serv.get_all_data();
     }
 
-    @GetMapping("/search")
-    public List<Employee> get_specific_docs(@RequestBody SearchRequest searchRequest) throws IOException {
-        return serv.get_specific_docs(searchRequest.getSearchString());
+    @GetMapping("/search/{searchString}")
+    public List<Employee> get_specific_docs(@PathVariable String searchString) throws IOException {
+        return serv.get_specific_docs(searchString);
     }
 
 }

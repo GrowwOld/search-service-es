@@ -38,7 +38,7 @@ public class service_impl implements service_intf {
     @Override
     public HttpStatus ingest_data() throws IOException, InterruptedException {
         //Here Enter path to your Json File.
-        File jsonFile = new File("/Users/satyam/Downloads/Employees50K.json");
+        File jsonFile = new File("Employees50K.json");
         FileReader fr = new FileReader(jsonFile);   //reads the file
         BufferedReader br = new BufferedReader(fr);
         String line;
